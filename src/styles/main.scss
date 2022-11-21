@@ -43,10 +43,15 @@ nav {
   object-fit: cover;
 }
 
-footer {
-  text-align: center;
-  padding: 10px;
-  background: $grey;
+#card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin: 30px;
+
+  @media (min-width: 425px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .card {
@@ -54,7 +59,6 @@ footer {
   height: 500px;
   background: red;
   border-radius: 20px;
-  margin: 30px;
   background: $dark-grey;
 
   .card-title {
@@ -90,4 +94,10 @@ footer {
   .description {
     margin: 15px 0;
   }
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: $grey;
 }
