@@ -48,9 +48,12 @@ nav {
   grid-template-columns: 1fr;
   gap: 30px;
   margin: 30px;
+  justify-content: center;
+  background-color: red;
 
-  @media (min-width: 425px) {
+  @media screen and (min-width: 890px) {
     grid-template-columns: repeat(2, 1fr);
+    background-color: blue;
   }
 }
 
@@ -60,6 +63,7 @@ nav {
   background: red;
   border-radius: 20px;
   background: $dark-grey;
+  margin: auto;
 
   .card-title {
     width: fit-content;
