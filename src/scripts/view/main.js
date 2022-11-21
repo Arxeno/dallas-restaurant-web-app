@@ -33,7 +33,7 @@ const main = () => {
       </div>
     </div>`;
 
-    document.body.innerHTML += card;
+    document.querySelector("#card-container").innerHTML += card;
   }
 
   document.body.appendChild(footer);
