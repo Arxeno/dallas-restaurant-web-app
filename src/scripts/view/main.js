@@ -1,4 +1,5 @@
-import dataJson from "../../DATA.json" assert { type: "json" };
+// import dataJson from "../../DATA.json" assert { type: "json" };
+import dataJson from "../../DATA.json";
 
 const main = () => {
   // console.log("Hello Coders! :)");
