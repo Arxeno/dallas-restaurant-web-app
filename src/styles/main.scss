@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
-$grey: #ebebeb;
+$blue: #00abb3;
+$black: #3c4048;
+$dark-grey: #b2b2b2;
+$grey: #eaeaea;
 
 * {
   padding: 0;
@@ -44,4 +47,47 @@ footer {
   text-align: center;
   padding: 10px;
   background: $grey;
+}
+
+.card {
+  width: 350px;
+  height: 500px;
+  background: red;
+  border-radius: 20px;
+  margin: 30px;
+  background: $dark-grey;
+
+  .card-title {
+    width: fit-content;
+    max-width: 330px;
+    position: relative;
+    background: $blue;
+    padding: 5px 10px;
+    border-radius: 20px;
+    top: -230px;
+    left: -20px;
+    box-shadow: 5px 5px 5px #0000007e;
+  }
+
+  img {
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+  }
+
+  .card-content-container {
+    margin: 0 25px;
+  }
+
+  .rating {
+    margin: 10px 0;
+    text-align: center;
+
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  .description {
+    margin: 15px 0;
+  }
 }
