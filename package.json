@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
-    "test": "karma start"
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "Raisyam rmfbkw04@gmail.com",
