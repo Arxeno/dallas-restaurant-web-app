@@ -2,7 +2,54 @@
 import dataJson from "../../DATA.json";
 
 const main = () => {
-  // console.log("Hello Coders! :)");
+  const navigationMenu = () => {
+    const hamburgerClick = () => {
+      console.log("Hello World");
+
+      let drawer = document.querySelector("#drawer");
+
+      drawer.style.left = "0";
+    };
+
+    const exitDrawer = () => {
+      let drawer = document.querySelector("#drawer");
+      drawer.style.left = "-100vw";
+    };
+
+    let navBarUl = document.querySelector("nav ul#main-ul");
+
+    if (window.innerWidth <= 550) {
+      console.log(navBarUl);
+      navBarUl.innerHTML = `
+        <button id="hamburger-menu"><img src="images/hamburger-menu.png" alt="hamburger menu"></button>
+        <div id="drawer">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Favourite</a></li>
+            <li>
+              <a href="https://raisyam.netlify.app" target="_blank">About Us</a>
+            </li>
+            <button id="exit-drawer">Exit</button>
+          </ul>
+        </div>`;
+
+      let exitDrawerButton = document.querySelector("#exit-drawer");
+      exitDrawerButton.addEventListener("click", exitDrawer);
+
+      let hamburgerButton = document.querySelector("#hamburger-menu");
+      hamburgerButton.addEventListener("click", hamburgerClick);
+    } else {
+      navBarUl.innerHTML = `
+        <li><a href="#" tabindex="2">Home</a></li>
+        <li><a href="#" tabindex="3">Favourite</a></li>
+        <li>
+          <a href="https://raisyam.netlify.app" target="_blank" tabindex="4">About Us</a>
+        </li>`;
+    }
+  };
+  navigationMenu();
+  addEventListener("resize", navigationMenu);
+
   // console.log(dataJson.restaurants[0]);
 
   const footer = document.querySelector("footer");
@@ -17,7 +64,7 @@ const main = () => {
     const rating = dataJson.restaurants[i].rating;
 
     const card = `
-    <div id="${id}" class="card">
+    <div id="${id}" class="card" tabindex="${i + 5}">
       <img
         src="${pictureUrl}"
         alt="restaurant photo"

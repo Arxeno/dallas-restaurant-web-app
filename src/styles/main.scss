@@ -11,6 +11,31 @@ $grey: #eaeaea;
   font-family: "Montserrat", sans-serif;
 }
 
+#skip-to-content {
+  position: absolute;
+  background: $blue;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  text-decoration: none;
+  color: $black;
+  font-weight: 700;
+  line-height: 44px;
+  opacity: 0;
+  z-index: -1;
+
+  &:focus {
+    opacity: 1;
+    z-index: 4;
+  }
+}
+
+a,
+button {
+  min-width: 44px;
+  min-height: 44px;
+}
+
 img {
   display: block;
 }
@@ -21,17 +46,70 @@ nav {
   grid-template-columns: 1fr 1fr;
   padding: 15px;
 
-  ul {
+  div#title-navbar {
+    display: flex;
+    align-items: center;
+  }
+
+  ul#main-ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: right;
+
+    @media (min-width: 550px) {
+      justify-content: space-around;
+    }
+
+    @media (min-width: 2000px) {
+      justify-content: right;
+    }
 
     li {
       list-style-type: none;
 
+      @media (min-width: 2000px) {
+        margin: auto 30px;
+      }
+
       a {
         text-decoration: none;
         color: black;
+
+        &:focus {
+          border: 3px solid $black;
+        }
+      }
+    }
+
+    #hamburger-menu {
+      border: 0;
+      background: $grey;
+    }
+
+    #drawer {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: -100vw;
+      background: $grey;
+      transition: 0.75s ease-out;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        li,
+        button {
+          margin: 20px auto;
+          font-size: 1.5rem;
+          border: 0;
+          background: transparent;
+        }
       }
     }
   }
@@ -43,38 +121,68 @@ nav {
   object-fit: cover;
 }
 
+#head-title-restaurant {
+  margin: 20px auto;
+  text-align: center;
+}
+
 #card-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
-  margin: 30px;
+  column-gap: 30px;
+  row-gap: 10px;
+  margin: 30px auto;
   justify-content: center;
-  background-color: red;
+  max-width: 1600px;
+  width: 90%;
 
-  @media screen and (min-width: 890px) {
+  @media (min-width: 890px) {
     grid-template-columns: repeat(2, 1fr);
-    background-color: blue;
+  }
+
+  @media (min-width: 1300px) {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+  }
+
+  @media (min-width: 1668px) {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 .card {
-  width: 350px;
+  width: 250px;
   height: 500px;
   background: red;
   border-radius: 20px;
   background: $dark-grey;
   margin: auto;
 
+  &:focus {
+    border: 3px solid $black;
+  }
+
+  @media (min-width: 400px) {
+    width: 350px;
+  }
+
   .card-title {
-    width: fit-content;
+    width: 100%;
+    box-sizing: border-box;
     max-width: 330px;
-    position: relative;
     background: $blue;
     padding: 5px 10px;
-    border-radius: 20px;
-    top: -230px;
-    left: -20px;
-    box-shadow: 5px 5px 5px #0000007e;
+    text-align: center;
+
+    @media (min-width: 400px) {
+      position: relative;
+      top: -230px;
+      left: -20px;
+      border-radius: 20px;
+      box-shadow: 5px 5px 5px #0000007e;
+      width: fit-content;
+      text-align: left;
+    }
   }
 
   img {
@@ -83,7 +191,11 @@ nav {
   }
 
   .card-content-container {
-    margin: 0 25px;
+    margin: 0 15px;
+
+    @media (min-width: 400px) {
+      margin: 0 25px;
+    }
   }
 
   .rating {
