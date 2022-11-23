@@ -24,7 +24,7 @@ const main = () => {
         <button id="hamburger-menu"><img src="images/hamburger-menu.png" alt="hamburger menu"></button>
         <div id="drawer">
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="#">Favourite</a></li>
             <li>
               <a href="https://raisyam.netlify.app" target="_blank">About Us</a>
@@ -40,7 +40,7 @@ const main = () => {
       hamburgerButton.addEventListener("click", hamburgerClick);
     } else {
       navBarUl.innerHTML = `
-        <li><a href="#" tabindex="2">Home</a></li>
+        <li><a href="/" tabindex="2">Home</a></li>
         <li><a href="#" tabindex="3">Favourite</a></li>
         <li>
           <a href="https://raisyam.netlify.app" target="_blank" tabindex="4">About Us</a>

@@ -9,6 +9,7 @@ $grey: #eaeaea;
   padding: 0;
   margin: 0;
   font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
 }
 
 #skip-to-content {
@@ -32,8 +33,8 @@ $grey: #eaeaea;
 
 a,
 button {
-  min-width: 44px;
-  min-height: 44px;
+  min-width: 44px !important;
+  min-height: 44px !important;
 }
 
 img {
@@ -41,10 +42,14 @@ img {
 }
 
 nav {
+  box-sizing: content-box;
   background: $grey;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
   padding: 15px;
+  height: 44px;
+  justify-content: space-between;
+  align-items: center;
 
   div#title-navbar {
     display: flex;
@@ -57,17 +62,13 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: right;
-
-    @media (min-width: 550px) {
-      justify-content: space-around;
-    }
-
-    @media (min-width: 2000px) {
-      justify-content: right;
-    }
+    height: 100%;
 
     li {
       list-style-type: none;
+      width: fit-content;
+      height: 100%;
+      margin: 0 15px;
 
       @media (min-width: 2000px) {
         margin: auto 30px;
@@ -76,6 +77,9 @@ nav {
       a {
         text-decoration: none;
         color: black;
+        width: 100%;
+        display: inline-block;
+        line-height: 44px;
 
         &:focus {
           border: 3px solid $black;
