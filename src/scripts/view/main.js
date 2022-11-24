@@ -21,15 +21,15 @@ const main = () => {
     if (window.innerWidth <= 550) {
       console.log(navBarUl);
       navBarUl.innerHTML = `
-        <button id="hamburger-menu"><img src="images/hamburger-menu.png" alt="hamburger menu"></button>
+        <button id="hamburger-menu" tabindex="2"><img src="images/hamburger-menu.png" alt="hamburger menu"></button>
         <div id="drawer">
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="#">Favourite</a></li>
+            <li><a href="/" tabindex="3">Home</a></li>
+            <li><a href="#" tabindex="4">Favourite</a></li>
             <li>
-              <a href="https://raisyam.netlify.app" target="_blank">About Us</a>
+              <a href="https://raisyam.netlify.app" target="_blank" tabindex="5">About Us</a>
             </li>
-            <button id="exit-drawer">Exit</button>
+            <button id="exit-drawer" tabindex="6">Exit</button>
           </ul>
         </div>`;
 
@@ -64,7 +64,7 @@ const main = () => {
     const rating = dataJson.restaurants[i].rating;
 
     const card = `
-    <div id="${id}" class="card" tabindex="${i + 5}">
+    <div id="${id}" class="card" tabindex="${i + 7}">
       <img
         src="${pictureUrl}"
         alt="restaurant photo"
