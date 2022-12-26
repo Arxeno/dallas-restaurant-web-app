@@ -1,22 +1,22 @@
-// import dataJson from "../../DATA.json" assert { type: "json" };
-import dataJson from "../../DATA.json";
+// import dataJson from '../../DATA.json' assert { type: 'json' };
+import dataJson from '../../DATA.json';
 
 const main = () => {
   const navigationMenu = () => {
     const hamburgerClick = () => {
-      console.log("Hello World");
+      console.log('Hello World');
 
-      let drawer = document.querySelector("#drawer");
+      const drawer = document.querySelector('#drawer');
 
-      drawer.style.left = "0";
+      drawer.style.left = '0';
     };
 
     const exitDrawer = () => {
-      let drawer = document.querySelector("#drawer");
-      drawer.style.left = "-100vw";
+      const drawer = document.querySelector('#drawer');
+      drawer.style.left = '-100vw';
     };
 
-    let navBarUl = document.querySelector("nav ul#main-ul");
+    const navBarUl = document.querySelector('nav ul#main-ul');
 
     if (window.innerWidth <= 550) {
       console.log(navBarUl);
@@ -33,11 +33,11 @@ const main = () => {
           </ul>
         </div>`;
 
-      let exitDrawerButton = document.querySelector("#exit-drawer");
-      exitDrawerButton.addEventListener("click", exitDrawer);
+      const exitDrawerButton = document.querySelector('#exit-drawer');
+      exitDrawerButton.addEventListener('click', exitDrawer);
 
-      let hamburgerButton = document.querySelector("#hamburger-menu");
-      hamburgerButton.addEventListener("click", hamburgerClick);
+      const hamburgerButton = document.querySelector('#hamburger-menu');
+      hamburgerButton.addEventListener('click', hamburgerClick);
     } else {
       navBarUl.innerHTML = `
         <li><a href="/" tabindex="2">Home</a></li>
@@ -48,25 +48,28 @@ const main = () => {
     }
   };
   navigationMenu();
-  addEventListener("resize", navigationMenu);
+  addEventListener('resize', navigationMenu);
 
   // console.log(dataJson.restaurants[0]);
 
-  const footer = document.querySelector("footer");
+  const footer = document.querySelector('footer');
   document.body.removeChild(footer);
 
-  for (let i = 0; i < dataJson.restaurants.length; i++) {
-    const id = dataJson.restaurants[i].id;
-    const name = dataJson.restaurants[i].name;
-    const description = dataJson.restaurants[i].description;
-    const pictureUrl = dataJson.restaurants[i].pictureId;
-    const city = dataJson.restaurants[i].city;
-    const rating = dataJson.restaurants[i].rating;
+  for (let i = 0; i < dataJson.restaurants.length; i += 1) {
+    const {
+      id, name, description, pictureId, city, rating,
+    } = dataJson.restaurants[i];
+    // const id = dataJson.restaurants[i].id;
+    // const name = dataJson.restaurants[i].name;
+    // const description = dataJson.restaurants[i].description;
+    // const pictureUrl = dataJson.restaurants[i].pictureId;
+    // const city = dataJson.restaurants[i].city;
+    // const rating = dataJson.restaurants[i].rating;
 
     const card = `
     <div id="${id}" class="card" tabindex="${i + 7}">
       <img
-        src="${pictureUrl}"
+        src="${pictureId}"
         alt="restaurant photo"
       />
       <div class="card-title"><p>${name}, ${city}</p></div>
@@ -81,7 +84,7 @@ const main = () => {
       </div>
     </div>`;
 
-    document.querySelector("#card-container").innerHTML += card;
+    document.querySelector('#card-container').innerHTML += card;
   }
 
   document.body.appendChild(footer);

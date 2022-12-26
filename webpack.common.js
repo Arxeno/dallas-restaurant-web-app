@@ -1,14 +1,14 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, "src/scripts/index.js"),
+    app: path.resolve(__dirname, 'src/scripts/index.js'),
   },
   output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
   module: {
@@ -17,13 +17,13 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           {
-            loader: "style-loader", // Creates `style` nodes from JS strings
+            loader: 'style-loader', // Creates `style` nodes from JS strings
           },
           {
-            loader: "css-loader", // Translates CSS into CommonJS
+            loader: 'css-loader', // Translates CSS into CommonJS
           },
           {
-            loader: "sass-loader", // Compiles Sass to CSS
+            loader: 'sass-loader', // Compiles Sass to CSS
           },
         ],
       },
@@ -31,15 +31,15 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: path.resolve(__dirname, "src/templates/index.html"),
-      favicon: path.resolve(__dirname, "./src/public/images/favicon.png"),
+      filename: 'index.html',
+      template: path.resolve(__dirname, 'src/templates/index.html'),
+      favicon: path.resolve(__dirname, './src/public/images/favicon.png'),
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "src/public/"),
-          to: path.resolve(__dirname, "dist/"),
+          from: path.resolve(__dirname, 'src/public/'),
+          to: path.resolve(__dirname, 'dist/'),
         },
       ],
     }),
