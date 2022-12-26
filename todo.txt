@@ -1,0 +1,4 @@
+apa yang kurang dari website?
+- struktur HTML yg masih kurang (seperti drawer)
+- bingung misahin file2nya
+- apakah file main.js ada yang perlu dipisah ke file lain?
