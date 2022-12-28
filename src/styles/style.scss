@@ -70,21 +70,12 @@ header {
     background: $dark-grey;
     transition: 0.5s ease-out;
 
-    @media (min-width: 576px) {
-      position: static;
-      width: fit-content;
-    }
-
     ul {
       display: flex;
       flex-direction: column;
       align-items: center;
       list-style-type: none;
       width: 100%;
-
-      @media (min-width: 576px) {
-        flex-direction: row;
-      }
 
       li {
         margin: 0 10px;

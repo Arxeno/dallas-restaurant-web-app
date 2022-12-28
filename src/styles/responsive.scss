@@ -1,0 +1,10 @@
+@media (min-width: 576px) {
+  header nav {
+    position: static;
+    width: fit-content;
+  }
+
+  header nav ul {
+    flex-direction: row;
+  }
+}

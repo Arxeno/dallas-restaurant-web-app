@@ -1,5 +1,6 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/style.scss';
+import '../styles/responsive.scss';
 // import main from './views/main';
 
 // Temporary imports
