@@ -9,9 +9,12 @@ import DrawerInitiator from './utils/drawer-initiator';
 const main = () => {
   const hamburgerButton = document.querySelector('#hamburger-menu__button');
   const drawer = document.querySelector('#drawer-menu');
+  const drawerLinks = document.querySelectorAll('.drawer-links');
   const mainContent = document.querySelector('#main');
 
-  DrawerInitiator.init({ hamburgerButton, drawer, mainContent });
+  DrawerInitiator.init({
+    hamburgerButton, drawer, drawerLinks, mainContent,
+  });
 };
 
 document.addEventListener('DOMContentLoaded', main);
