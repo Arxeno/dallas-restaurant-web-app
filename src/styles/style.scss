@@ -56,24 +56,30 @@ header {
       display: none;
     }
     
-    #hamburger-menu {
+    #hamburger-menu__button {
       border: 0;
       background: transparent;
     }
   }
 
   nav {
-    display: none;
-
-    @media (min-width: 576px) {
-      display: block;
-    }
+    position: absolute;
+    top: 72px;
+    left: -100vw;
+    width: 100vw;
+    background: $dark-grey;
+    transition: 0.5s ease-out;
 
     ul {
       display: flex;
+      flex-direction: column;
       align-items: center;
       list-style-type: none;
       width: 100%;
+
+      @media (min-width: 576px) {
+        flex-direction: row;
+      }
 
       li {
         margin: 0 10px;
@@ -86,6 +92,11 @@ header {
       }
     }
   }
+}
+
+.open-drawer {
+  top: 72px;
+  left: 0;
 }
 
 #hero-image {
