@@ -2,3 +2,8 @@ apa yang kurang dari website?
 - struktur HTML yg masih kurang (seperti drawer)
 - bingung misahin file2nya
 - apakah file main.js ada yang perlu dipisah ke file lain?
+
+Daftar Halaman2nya:
+- Halaman utama                     route -> /              -> now-available.js
+- Halaman Detail Restoran           route -> /detail/:id    -> detail.js
+- Halaman daftar restoran favorit   route -> /favorites     -> favorites.js
