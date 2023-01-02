@@ -1,4 +1,5 @@
 import RestaurantDBSource from '../../data/restaurantdb-source';
+import TemplateCreator from '../templates/template-creator';
 
 const NowAvailable = {
   async render() {
@@ -18,6 +19,11 @@ const NowAvailable = {
   async afterRender() {
     const restaurants = await RestaurantDBSource.nowAvailable();
     console.log(restaurants);
+    console.log('--------------');
+    const cardContainer = document.querySelector('#card-container');
+    restaurants.forEach((restaurant) => {
+      cardContainer.innerHTML += TemplateCreator.createRestaurantCardTemplate(restaurant);
+    });
   },
 };
 

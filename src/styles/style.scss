@@ -50,6 +50,7 @@ header {
   align-items: center;
   background: $dark-grey;
   padding: 10px 0px 10px 10px;
+  z-index: 99;
 
   #hamburger-menu__container {
     @media (min-width: 576px) {
@@ -94,6 +95,47 @@ header {
   top: 72px;
   left: 0;
 }
+
+.content {
+  width: 90%;
+  margin: auto;
+}
+
+// DETAIL
+
+.content__detail {
+  display: grid;
+  row-gap: 20px;
+}
+
+#restaurant-photo__detail {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.detail-contents {
+  background-color: $dark-grey;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.restaurant__menus {
+  display: grid;
+  row-gap: 20px;
+}
+
+.restaurant__reviews {
+  display: grid;
+  row-gap: 10px;
+}
+
+.review {
+  background: $grey;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+// 
 
 #hero-image {
   width: 100%;
@@ -196,4 +238,5 @@ footer {
   text-align: center;
   padding: 10px;
   background: $grey;
+  margin-top: 15px;
 }
