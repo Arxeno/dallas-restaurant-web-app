@@ -1,3 +1,5 @@
+import RestaurantDBSource from '../../data/restaurantdb-source';
+
 const NowAvailable = {
   async render() {
     return `
@@ -14,7 +16,8 @@ const NowAvailable = {
   },
 
   async afterRender() {
-    // after render goes here
+    const restaurants = await RestaurantDBSource.nowAvailable();
+    console.log(restaurants);
   },
 };
 

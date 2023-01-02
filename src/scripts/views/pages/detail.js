@@ -1,3 +1,6 @@
+import RestaurantDBSource from '../../data/restaurantdb-source';
+import UrlParser from '../../routes/url-parser';
+
 const Detail = {
   async render() {
     return `
@@ -8,7 +11,11 @@ const Detail = {
     `;
   },
 
-  async afterRender() {},
+  async afterRender() {
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
+    const restaurant = await RestaurantDBSource.detailRestaurant(url.id);
+    console.log(restaurant.restaurant);
+  },
 };
 
 export default Detail;
