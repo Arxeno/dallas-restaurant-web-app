@@ -11,4 +11,10 @@ const app = new App({
   mainContent: document.querySelector('#main'),
 });
 
-// document.addEventListener('DOMContentLoaded', main);
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
+
+window.addEventListener('load', () => {
+  app.renderPage();
+});
