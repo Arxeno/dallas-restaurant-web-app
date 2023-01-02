@@ -27,7 +27,7 @@ $grey: #eaeaea;
 
   &:focus {
     opacity: 1;
-    z-index: 4;
+    z-index: 91;
   }
 }
 
@@ -50,7 +50,7 @@ header {
   align-items: center;
   background: $dark-grey;
   padding: 10px 0px 10px 10px;
-  z-index: 99;
+  z-index: 90;
 
   #hamburger-menu__container {
     @media (min-width: 576px) {
