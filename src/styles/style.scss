@@ -191,20 +191,9 @@ header {
   .card-title {
     width: 100%;
     box-sizing: border-box;
-    max-width: 330px;
     background: $blue;
     padding: 5px 10px;
     text-align: center;
-
-    @media (min-width: 400px) {
-      position: relative;
-      top: -230px;
-      left: -20px;
-      border-radius: 20px;
-      box-shadow: 5px 5px 5px #0000007e;
-      width: fit-content;
-      text-align: left;
-    }
   }
 
   img {
