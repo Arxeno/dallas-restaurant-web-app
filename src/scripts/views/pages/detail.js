@@ -11,11 +11,15 @@ const Detail = {
   },
 
   async afterRender() {
-    const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurant = await RestaurantDBSource.detailRestaurant(url.id);
-    console.log(restaurant);
     const detailContainer = document.querySelector('#detail');
-    detailContainer.innerHTML += TemplateCreator.createRestaurantDetailTemplate(restaurant);
+    try {
+      const url = UrlParser.parseActiveUrlWithoutCombiner();
+      const restaurant = await RestaurantDBSource.detailRestaurant(url.id);
+      console.log(restaurant);
+      detailContainer.innerHTML += TemplateCreator.createRestaurantDetailTemplate(restaurant);
+    } catch (error) {
+      detailContainer.innerHTML = '<h2 class="error">Failed to load data</h2>';
+    }
   },
 };
 

@@ -12,6 +12,13 @@ $grey: #eaeaea;
   box-sizing: border-box;
 }
 
+body {
+  min-height: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 #skip-to-content {
   position: absolute;
   background: $blue;
@@ -226,6 +233,10 @@ header {
   .description {
     margin: 15px 0;
   }
+}
+
+.error {
+  text-align: center;
 }
 
 footer {

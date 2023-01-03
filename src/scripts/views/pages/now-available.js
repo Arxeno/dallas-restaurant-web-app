@@ -17,13 +17,18 @@ const NowAvailable = {
   },
 
   async afterRender() {
-    const restaurants = await RestaurantDBSource.nowAvailable();
-    console.log(restaurants);
-    console.log('--------------');
     const cardContainer = document.querySelector('#card-container');
-    restaurants.forEach((restaurant) => {
-      cardContainer.innerHTML += TemplateCreator.createRestaurantCardTemplate(restaurant);
-    });
+    try {
+      const restaurants = await RestaurantDBSource.nowAvailable();
+      console.log(restaurants);
+      console.log('--------------');
+      restaurants.forEach((restaurant) => {
+        cardContainer.innerHTML += TemplateCreator.createRestaurantCardTemplate(restaurant);
+      });
+    } catch (error) {
+      console.log('Failed to load data', error);
+      cardContainer.innerHTML = '<h2 class="error">Failed to load data</h2>';
+    }
   },
 };
 
