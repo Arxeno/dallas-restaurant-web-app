@@ -119,6 +119,11 @@ header {
   border-radius: 20px;
 }
 
+.restaurant__info {
+  display: grid;
+  row-gap: 20px;
+}
+
 .restaurant__menus {
   display: grid;
   row-gap: 20px;

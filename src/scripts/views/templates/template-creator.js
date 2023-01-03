@@ -30,10 +30,14 @@ const TemplateCreator = {
       <img id="restaurant-photo__detail" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="restaurant image">
       <div class="restaurant__info detail-contents">
         <h2>Information</h2>
-        <h3>Location</h3>
-        <p>${restaurant.address}, ${restaurant.city}</p>
-        <h3>Rating</h3>
-        <p>${restaurant.rating}</p>
+        <div>
+          <h3>Location</h3>
+          <p>${restaurant.address}, ${restaurant.city}</p>
+        </div>
+        <div>
+          <h3>Rating</h3>
+          <p>${restaurant.rating}</p>
+        </div>
         `;
 
     result += this._createRestaurantCategories(restaurant.categories);
@@ -91,7 +95,7 @@ const TemplateCreator = {
   },
 
   _createRestaurantCategories(categories) {
-    let result = '<h3>Categories</h3>';
+    let result = '<div><h3>Categories</h3>';
     result += '<p>';
 
     for (let i = 0; i < categories.length; i += 1) {
@@ -104,14 +108,17 @@ const TemplateCreator = {
     }
 
     result += '</p>';
+    result += '</div>';
 
     return result;
   },
 
   _createRestaurantDescription(description) {
     return `
-    <h3>Description</h3>
-    <p>${description}</p>
+    <div>
+      <h3>Description</h3>
+      <p>${description}</p>
+    </div>
     `;
   },
 };
