@@ -28,6 +28,9 @@ const TemplateCreator = {
     <div class="content content__detail">
       <h1 id="head-title-restaurant">${restaurant.name}</h1>
       <img id="restaurant-photo__detail" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="restaurant image">
+      
+      <div id="favoriteButtonContainer"></div>
+
       <div class="restaurant__info detail-contents">
         <h2>Information</h2>
         <div>
@@ -38,7 +41,7 @@ const TemplateCreator = {
           <h3>Rating</h3>
           <p>${restaurant.rating}</p>
         </div>
-        `;
+    `;
 
     result += this._createRestaurantCategories(restaurant.categories);
     result += this._createRestaurantDescription(restaurant.description);
@@ -119,6 +122,22 @@ const TemplateCreator = {
       <h3>Description</h3>
       <p>${description}</p>
     </div>
+    `;
+  },
+
+  createFavoriteButton() {
+    return `
+      <button aria-label="put restaurant to favorite" id="favoriteButton" class="favorites__button">
+        Put to Favorites
+      </button>
+    `;
+  },
+
+  createDeleteFavoriteButton() {
+    return `
+      <button aria-label="delete restaurant from favorite" id="favoriteButton" class="favorites__button favorited">
+        Favorited
+      </button>
     `;
   },
 };

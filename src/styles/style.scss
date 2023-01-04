@@ -239,6 +239,13 @@ header {
   text-align: center;
 }
 
+.favorites__button {
+  background: $grey;
+  border: 1px solid $dark-grey;
+  border-radius: 20px;
+  width: 100%;
+}
+
 footer {
   text-align: center;
   padding: 10px;
