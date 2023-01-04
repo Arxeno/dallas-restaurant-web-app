@@ -16,7 +16,6 @@ const Detail = {
     try {
       const url = UrlParser.parseActiveUrlWithoutCombiner();
       const restaurant = await RestaurantDBSource.detailRestaurant(url.id);
-      console.log(restaurant);
       detailContainer.innerHTML += TemplateCreator.createRestaurantDetailTemplate(restaurant);
 
       FavoriteButtonInitiator.init({
