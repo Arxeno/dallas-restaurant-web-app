@@ -35,9 +35,6 @@ class App {
     resource = (resource ? `/${resource}` : '');
     id = (id ? `/${id}` : '');
     verb = (verb ? `/${verb}` : '');
-    console.log('RESOURCE', resource);
-    console.log('ID', id);
-    console.log('VERB', verb);
     const newHrefAndId = `${resource}${id}${verb}/main`;
     this._skipToContent.href = `#${newHrefAndId}`;
     this._mainContent.id = newHrefAndId;
