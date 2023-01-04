@@ -6,6 +6,7 @@ import swRegister from './utils/sw-register';
 // import main from './views/main';
 
 const app = new App({
+  skipToContent: document.querySelector('#skip-to-content'),
   hamburgerButton: document.querySelector('#hamburger-menu__button'),
   drawer: document.querySelector('#drawer-menu'),
   drawerLinks: document.querySelectorAll('.drawer-links'),

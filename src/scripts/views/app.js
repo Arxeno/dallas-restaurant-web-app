@@ -4,8 +4,9 @@ import routes from '../routes/routes';
 
 class App {
   constructor({
-    hamburgerButton, drawer, drawerLinks, mainContent,
+    skipToContent, hamburgerButton, drawer, drawerLinks, mainContent,
   }) {
+    this._skipToContent = skipToContent;
     this._hamburgerButton = hamburgerButton;
     this._drawer = drawer;
     this._drawerLinks = drawerLinks;
@@ -28,6 +29,18 @@ class App {
     const page = routes[url];
     this._mainContent.innerHTML = await page.render();
     await page.afterRender();
+
+    const urlSplit = UrlParser.parseActiveUrlWithoutCombiner();
+    let { resource, id, verb } = urlSplit;
+    resource = (resource ? `/${resource}` : '');
+    id = (id ? `/${id}` : '');
+    verb = (verb ? `/${verb}` : '');
+    console.log('RESOURCE', resource);
+    console.log('ID', id);
+    console.log('VERB', verb);
+    const newHrefAndId = `${resource}${id}${verb}/main`;
+    this._skipToContent.href = `#${newHrefAndId}`;
+    this._mainContent.id = newHrefAndId;
   }
 }
 
