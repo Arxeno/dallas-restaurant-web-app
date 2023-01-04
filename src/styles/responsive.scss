@@ -1,3 +1,13 @@
+@media (min-width: 400px) {
+  .card {
+    width: 350px;
+
+    .card-content-container {
+      margin: 0 25px;
+    }
+  }
+}
+
 @media (min-width: 576px) {
   header nav {
     position: static;
@@ -6,5 +16,28 @@
 
   header nav ul {
     flex-direction: row;
+  }
+
+  #hamburger-menu__container {
+    display: none;
+  }
+}
+
+@media (min-width: 890px) {
+  #card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1300px) {
+  #card-container {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+  }
+}
+
+@media (min-width: 1668px) {
+  #card-container {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

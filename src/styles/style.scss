@@ -59,11 +59,7 @@ header {
   padding: 10px 0px 10px 10px;
   z-index: 90;
 
-  #hamburger-menu__container {
-    @media (min-width: 576px) {
-      display: none;
-    }
-    
+  #hamburger-menu__container {  
     #hamburger-menu__button {
       border: 0;
       background: transparent;
@@ -169,19 +165,6 @@ header {
   justify-content: center;
   max-width: 1600px;
   width: 90%;
-
-  @media (min-width: 890px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: 1300px) {
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 30px;
-  }
-
-  @media (min-width: 1668px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 .card {
@@ -194,10 +177,6 @@ header {
 
   &:focus {
     border: 3px solid $black;
-  }
-
-  @media (min-width: 400px) {
-    width: 350px;
   }
 
   .card-title {
@@ -215,10 +194,6 @@ header {
 
   .card-content-container {
     margin: 0 15px;
-
-    @media (min-width: 400px) {
-      margin: 0 25px;
-    }
   }
 
   .rating {
