@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "http-server dist",
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "start": "http-server dist"
+    "build-image": "node sharp.js"
   },
   "keywords": [],
   "author": "Raisyam rmfbkw04@gmail.com",
