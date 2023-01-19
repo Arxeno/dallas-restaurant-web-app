@@ -3,7 +3,8 @@ import '../styles/style.scss';
 import '../styles/responsive.scss';
 import App from './views/app';
 import swRegister from './utils/sw-register';
-// import main from './views/main';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const app = new App({
   skipToContent: document.querySelector('#skip-to-content'),
