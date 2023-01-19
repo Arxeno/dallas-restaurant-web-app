@@ -24,7 +24,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new ImageminWebpackPlugin({
-      test: 'images/heros/**',
+      test: 'images/heros/*.jpg',
       minFileSize: 50000,
       plugins: [
         ImageminMozjpeg({
