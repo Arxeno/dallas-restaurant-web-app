@@ -23,7 +23,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "html-webpack-plugin": "^5.5.0",
-    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-webp": "^6.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",

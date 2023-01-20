@@ -5,11 +5,11 @@ const NowAvailable = {
   async render() {
     return `
     <picture>
-      <source media="(max-width: 425px)" srcset="./images/heros/hero-image_1-small.jpg">
-      <source media="(max-width: 768px)" srcset="./images/heros/hero-image_1-medium.jpg">
+      <source media="(max-width: 425px)" srcset="./images/heros/hero-image_1-small.webp">
+      <source media="(max-width: 768px)" srcset="./images/heros/hero-image_1-medium.webp">
       <img
             id="hero-image"
-            src="./images/heros/hero-image_1-large.jpg"
+            src="./images/heros/hero-image_1-large.webp"
             alt="people cooking"
         />
     </picture>
