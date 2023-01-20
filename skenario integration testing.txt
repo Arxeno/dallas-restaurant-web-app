@@ -1,0 +1,20 @@
+SKENARIO MENYUKAI RESTAURANT:
+1. Film belum disukai.
+2. Widget untuk menyukai film ditampilkan
+3. Widget menyukai film ditekan oleh pengguna.
+4. Film ditambahkan ke daftar film yang disukai:
+  a. Ternyata film sudah disukai:
+    - Tidak perlu menyimpan kembali.
+  
+  b. Data film tidak memiliki ID:
+    - Sistem tidak memproses penyimpanan.
+    - Sistem tidak gagal.
+
+
+
+SKENARIO BATAL MENYUKAI RESTAURANT:
+1. Film sudah disukai.
+2. Widget untuk batal menyukai film ditampilkan.
+3. Widget pembatalan ditekan oleh pengguna.
+4. Film dihapus dari daftar film yang disukai:
+  a. Ternyata film tidak ada dalam daftar film yang disukai.
