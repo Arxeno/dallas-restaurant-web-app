@@ -6,7 +6,8 @@ const TemplateCreator = {
     return `
     <div id="${restaurant.id}" class="card">
       <img
-        src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}"
+        data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}"
+        class="lazyload"
         alt="restaurant photo"
       />
       <div class="card-title"><p>${restaurant.name}, ${restaurant.city}</p></div>
