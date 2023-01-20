@@ -14,7 +14,18 @@ describe('Favoriting A Restaurant', () => {
     expect(document.querySelector('[aria-label="put restaurant to favorite"]')).toBeTruthy();
   });
 
-  it('should not show the unfavorite button when the restaurant has not been favorited before', async () => {});
+  it('should not show the unfavorite button when the restaurant has not been favorited before', async () => {
+    document.body.innerHTML = '<div id="favoriteButtonContainer"></div>';
+
+    await FavoriteButtonInitiator.init({
+      buttonContainer: document.querySelector('#favoriteButtonContainer'),
+      restaurant: {
+        id: 1,
+      },
+    });
+
+    expect(document.querySelector('[aria-label="delete restaurant from favorite"]')).toBeFalsy();
+  });
 
   it('should be able to favorite the restaurant', async () => {});
 
