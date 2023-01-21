@@ -65,7 +65,7 @@ describe('Favoriting A Restaurant', () => {
     FavoriteRestaurantIdb.deleteRestaurant(1);
   });
 
-  xit('should not add a restaurant when it has no id', async () => {
+  it('should not add a restaurant when it has no id', async () => {
     await FavoriteButtonInitiator.init({
       buttonContainer: document.querySelector('#favoriteButtonContainer'),
       restaurant: {},
@@ -74,5 +74,7 @@ describe('Favoriting A Restaurant', () => {
     document.querySelector('[aria-label="put restaurant to favorite"]').dispatchEvent(new Event('click'));
 
     expect(await FavoriteRestaurantIdb.getAllRestaurants()).toEqual([]);
+    expect(document.querySelector('[aria-label="put restaurant to favorite"]')).toBeTruthy();
+    expect(document.querySelector('[aria-label="delete restaurant from favorite"]')).toBeFalsy();
   });
 });
