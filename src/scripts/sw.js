@@ -3,10 +3,9 @@ import 'regenerator-runtime';
 
 const assetsToCache = [
   './',
-  './images/heros/hero-image_1.jpg',
-  './images/heros/hero-image_2.jpg',
-  './images/heros/hero-image_3.jpg',
-  './images/heros/hero-image_4.jpg',
+  './images/heros/hero-image_1-large.webp',
+  './images/heros/hero-image_1-medium.webp',
+  './images/heros/hero-image_1-small.webp',
   './images/icons/icon-72x72.png',
   './images/icons/icon-96x96.png',
   './images/icons/icon-128x128.png',

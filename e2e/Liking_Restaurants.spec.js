@@ -16,6 +16,7 @@ Scenario('Favoriting a restaurant', async ({ I }) => {
   I.see('You don\'t have any favorited restaurant', '#empty-favorite-restaurant');
   I.amOnPage('/');
 
+  I.wait(4);
   I.seeElement('#rqdv5juczeskfw1e867 .card-content-container a');
   const firstRestaurantTitle = await I.grabTextFrom(locate('#rqdv5juczeskfw1e867 .card-title').first());
   const firstRestaurant = locate('#rqdv5juczeskfw1e867 .card-content-container a').first();
@@ -41,10 +42,12 @@ Scenario('Unfavoriting a Restaurant', ({ I }) => {
   I.see('You don\'t have any favorited restaurant', '#empty-favorite-restaurant');
   I.amOnPage('/');
 
+  I.wait(4);
   I.seeElement('#rqdv5juczeskfw1e867 .card-content-container a');
   const firstRestaurant = locate('#rqdv5juczeskfw1e867 .card-content-container a').first();
   I.click(firstRestaurant);
 
+  I.wait(4);
   I.seeElement('#favoriteButtonContainer button[aria-label="put restaurant to favorite"]');
   I.click(locate('#favoriteButtonContainer button[aria-label="put restaurant to favorite"]').first());
 
@@ -53,6 +56,7 @@ Scenario('Unfavoriting a Restaurant', ({ I }) => {
   I.seeElement('#rqdv5juczeskfw1e867 .card-content-container a');
   I.click(firstRestaurant);
 
+  I.wait(4);
   I.seeElement('#favoriteButtonContainer button[aria-label="delete restaurant from favorite"]');
   I.click(locate('#favoriteButtonContainer button[aria-label="delete restaurant from favorite"]').first());
 
