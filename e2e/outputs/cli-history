@@ -1,0 +1,7 @@
+
+
+<<< Recorded commands on Tue Jan 24 2023 09:02:34 GMT+0700 (Western Indonesia Time)
+I.seeElement('#rqdv5juczeskfw1e867 .card-content-container a')
+I.click(locate('#rqdv5juczeskfw1e867 .card-content-container a').first())
+I.seeElement('#favoriteButtonContainer button');
+I.click(locate('#favoriteButtonContainer button').first())

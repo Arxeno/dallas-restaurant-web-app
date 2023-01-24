@@ -19,8 +19,10 @@ const Favorites = {
       restaurants.forEach((restaurant) => {
         cardContainer.innerHTML += TemplateCreator.createRestaurantCardTemplate(restaurant);
       });
+      cardContainer.classList.remove('emptyFavorite');
     } else {
-      cardContainer.innerHTML = '<p class="center-text">You don\'t have any favorited restaurant<p>';
+      cardContainer.innerHTML = '<p id="empty-favorite-restaurant" class="center-text">You don\'t have any favorited restaurant</p>';
+      cardContainer.classList.add('emptyFavorite');
     }
   },
 };

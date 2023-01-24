@@ -167,6 +167,10 @@ header {
   width: 90%;
 }
 
+.emptyFavorite {
+  grid-template-columns: 1fr !important;
+}
+
 .card {
   width: 250px;
   height: 500px;
