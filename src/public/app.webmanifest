@@ -1,6 +1,6 @@
 {
   "id": "dallas-restaurant-app-pwa-1",
-  "start_url": "./index.html",
+  "start_url": ".",
   "name": "DALLAS - Restaurant App",
   "short_name": "DALLAS",
   "description": "All Restaurants in Your Pocket",
